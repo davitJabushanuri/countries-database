@@ -1,0 +1,12 @@
+body {
+	min-height: 100vh;
+}
+
+main {
+	background-color: $clr-background-light;
+	min-height: 100vh;
+}
+
+#dark {
+	background-color: $clr-background-dark;
+}
