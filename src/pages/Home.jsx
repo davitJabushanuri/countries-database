@@ -9,8 +9,10 @@ const Home = ({ darkTheme, SetDarkTheme, data }) => {
 	return (
 		<section className='home'>
 			<Header darkTheme={darkTheme} SetDarkTheme={SetDarkTheme} />
-			<Search />
-			<Filter />
+			<section className='home__searchFilter'>
+				<Search />
+				<Filter />
+			</section>
 			<Countries data={data} />
 		</section>
 	)
