@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { VscChevronDown } from 'react-icons/vsc'
 import { VscChevronUp } from 'react-icons/vsc'
 
-const Filter = ({ setFilterWord }) => {
+const Filter = ({ setFilterWord, filterWord }) => {
 	const [dropDown, setDropDown] = useState(false)
 
 	return (
@@ -11,7 +11,9 @@ const Filter = ({ setFilterWord }) => {
 				onClick={() => setDropDown(prev => !prev)}
 				className='filter__dropdown'
 			>
-				<p className='filter__dropdown__heading'>Filter by region</p>
+				<p className='filter__dropdown__heading'>
+					{filterWord.length === 0 ? `Filter by region` : filterWord}
+				</p>
 				{dropDown ? <VscChevronUp /> : <VscChevronDown />}
 			</button>
 

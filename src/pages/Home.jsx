@@ -19,7 +19,7 @@ const Home = ({
 			<Header darkTheme={darkTheme} SetDarkTheme={SetDarkTheme} />
 			<section className='home__searchFilter'>
 				<Search />
-				<Filter setFilterWord={setFilterWord} />
+				<Filter filterWord={filterWord} setFilterWord={setFilterWord} />
 			</section>
 
 			{loading ? (
