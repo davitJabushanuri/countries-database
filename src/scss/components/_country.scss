@@ -1,0 +1,32 @@
+.country {
+	width: 264px;
+	border-radius: 5px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	gap: 1.2rem;
+	background-color: $clr-light-elements;
+	-webkit-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+	&__imgContainer {
+		&__img {
+			aspect-ratio: 16/10;
+			object-fit: cover;
+		}
+	}
+
+	&__heading {
+		margin-left: 1rem;
+		font-size: 18px;
+		font-weight: $fw-bold;
+	}
+
+	&__details {
+		margin-left: 1rem;
+		margin-bottom: 2rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+	}
+}

@@ -5,13 +5,13 @@ import Search from '../components/Search'
 import Filter from '../components/Filter'
 import Countries from '../components/Countries'
 
-const Home = ({ darkTheme, SetDarkTheme }) => {
+const Home = ({ darkTheme, SetDarkTheme, data }) => {
 	return (
 		<section className='home'>
 			<Header darkTheme={darkTheme} SetDarkTheme={SetDarkTheme} />
 			<Search />
 			<Filter />
-			<Countries />
+			<Countries data={data} />
 		</section>
 	)
 }
