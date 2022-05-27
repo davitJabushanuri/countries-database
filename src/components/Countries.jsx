@@ -2,7 +2,6 @@ import React from 'react'
 import Country from './Country'
 
 const Countries = ({ data, filterWord }) => {
-	console.log(filterWord)
 	return (
 		<section className='countries'>
 			{filterWord.length === 0

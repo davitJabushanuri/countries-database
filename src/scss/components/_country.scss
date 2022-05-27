@@ -21,13 +21,14 @@
 	}
 
 	&__heading {
-		margin-left: 1rem;
+		margin-left: 1.2rem;
+		margin-top: 0.6rem;
 		font-size: 18px;
 		font-weight: $fw-bold;
 	}
 
 	&__details {
-		margin-left: 1rem;
+		margin-left: 1.2rem;
 		margin-bottom: 2rem;
 		display: flex;
 		flex-direction: column;

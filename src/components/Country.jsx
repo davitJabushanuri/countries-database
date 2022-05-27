@@ -1,6 +1,10 @@
 import React from 'react'
 
 const Card = ({ img, country, population, region, capital }) => {
+	function numberWithCommas(x) {
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+	}
+
 	return (
 		<div className='country'>
 			<div className='country__imgContainer'>
@@ -12,7 +16,7 @@ const Card = ({ img, country, population, region, capital }) => {
 				<p className='country__details__population'>
 					Population:{' '}
 					<span className='country__details__population__span'>
-						{population}
+						{numberWithCommas(population)}
 					</span>
 				</p>
 				<p className='country__details__population'>
