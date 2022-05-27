@@ -8,6 +8,7 @@ function App() {
 	const [darkTheme, SetDarkTheme] = useState(false)
 	const [data, setData] = useState([])
 	const [loading, setLoading] = useState(false)
+	const [filterWord, setFilterWord] = useState('')
 
 	const getData = async url => {
 		setLoading(true)
@@ -33,6 +34,8 @@ function App() {
 								SetDarkTheme={SetDarkTheme}
 								data={data}
 								loading={loading}
+								filterWord={filterWord}
+								setFilterWord={setFilterWord}
 							/>
 						}
 					/>

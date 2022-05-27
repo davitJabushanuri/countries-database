@@ -34,6 +34,10 @@
 		&__list {
 			list-style: none;
 			cursor: pointer;
+
+			&:hover {
+				color: $clr-light-input;
+			}
 		}
 	}
 }

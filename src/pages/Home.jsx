@@ -6,16 +6,27 @@ import Filter from '../components/Filter'
 import Countries from '../components/Countries'
 import Loading from '../components/Loading'
 
-const Home = ({ darkTheme, SetDarkTheme, data, loading }) => {
+const Home = ({
+	darkTheme,
+	SetDarkTheme,
+	data,
+	loading,
+	setFilterWord,
+	filterWord,
+}) => {
 	return (
 		<section className='home'>
 			<Header darkTheme={darkTheme} SetDarkTheme={SetDarkTheme} />
 			<section className='home__searchFilter'>
 				<Search />
-				<Filter />
+				<Filter setFilterWord={setFilterWord} />
 			</section>
 
-			{loading ? <Loading /> : <Countries data={data} />}
+			{loading ? (
+				<Loading />
+			) : (
+				<Countries data={data} filterWord={filterWord} />
+			)}
 		</section>
 	)
 }
