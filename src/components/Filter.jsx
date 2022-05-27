@@ -64,6 +64,15 @@ const Filter = ({ setFilterWord }) => {
 				>
 					Oceania
 				</li>
+				<li
+					onClick={() => {
+						setFilterWord('All')
+						setDropDown(prev => !prev)
+					}}
+					className='filter__container__list'
+				>
+					All
+				</li>
 			</div>
 		</section>
 	)

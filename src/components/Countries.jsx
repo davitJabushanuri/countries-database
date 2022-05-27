@@ -18,6 +18,19 @@ const Countries = ({ data, filterWord }) => {
 							/>
 						)
 				  })
+				: filterWord === 'All'
+				? data.map(country => {
+						return (
+							<Country
+								key={country?.latlng}
+								img={country?.flags?.svg}
+								capital={country?.capital}
+								country={country?.name?.common}
+								region={country?.region}
+								population={country?.population}
+							/>
+						)
+				  })
 				: data
 						.filter(country => country.region === filterWord)
 						.map(country => {
