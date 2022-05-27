@@ -1,0 +1,50 @@
+.filter {
+	margin: 2rem 1rem;
+	width: 200px;
+	font-size: 12px;
+
+	&__dropdown {
+		background-color: $clr-light-elements;
+		padding: 1rem;
+		border-radius: 5px;
+		width: 100%;
+		-webkit-box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.05);
+		box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.05);
+		display: flex;
+		color: $clr-light-text;
+		justify-content: space-between;
+		font-weight: $fw-light;
+		cursor: pointer;
+	}
+
+	&__container {
+		margin-top: 5px;
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
+		font-weight: $fw-light;
+		-webkit-box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.05);
+		box-shadow: 0px 4px 9px 0px rgba(10, 10, 10, 0.05);
+		padding: 1rem;
+		border-radius: 5px;
+		width: 100%;
+		background-color: $clr-light-elements;
+
+		&__list {
+			list-style: none;
+			cursor: pointer;
+		}
+	}
+}
+
+#dark .filter {
+	&__dropdown {
+		background-color: $clr-dark-elements;
+		color: $clr-dark-text;
+	}
+
+	&__container {
+		background-color: $clr-dark-elements;
+		color: $clr-dark-text;
+	}
+}
