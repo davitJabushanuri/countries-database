@@ -16,7 +16,7 @@ const Filter = () => {
 			</button>
 
 			<div
-				style={{ opacity: `${dropDown ? 1 : 0}` }}
+				style={{ display: `${dropDown ? 'flex' : 'none'}` }}
 				className='filter__container'
 			>
 				<li className='filter__container__list'>Africa</li>
