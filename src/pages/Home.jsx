@@ -4,8 +4,9 @@ import Header from '../components/Header'
 import Search from '../components/Search'
 import Filter from '../components/Filter'
 import Countries from '../components/Countries'
+import Loading from '../components/Loading'
 
-const Home = ({ darkTheme, SetDarkTheme, data }) => {
+const Home = ({ darkTheme, SetDarkTheme, data, loading }) => {
 	return (
 		<section className='home'>
 			<Header darkTheme={darkTheme} SetDarkTheme={SetDarkTheme} />
@@ -13,7 +14,8 @@ const Home = ({ darkTheme, SetDarkTheme, data }) => {
 				<Search />
 				<Filter />
 			</section>
-			<Countries data={data} />
+
+			{loading ? <Loading /> : <Countries data={data} />}
 		</section>
 	)
 }

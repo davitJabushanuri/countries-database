@@ -7,10 +7,13 @@ import Details from './pages/Details'
 function App() {
 	const [darkTheme, SetDarkTheme] = useState(false)
 	const [data, setData] = useState([])
+	const [loading, setLoading] = useState(false)
 
 	const getData = async url => {
+		setLoading(true)
 		const data = await fetch(url)
 		const result = await data.json()
+		setLoading(false)
 		setData(result)
 	}
 
@@ -29,6 +32,7 @@ function App() {
 								darkTheme={darkTheme}
 								SetDarkTheme={SetDarkTheme}
 								data={data}
+								loading={loading}
 							/>
 						}
 					/>
