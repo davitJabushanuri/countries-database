@@ -49,7 +49,7 @@ const CountryDetails = ({
 					</p>
 				</div>
 
-				<div className='gridContainer__AdvancedInfo'>
+				<div className='gridContainer__advancedInfo'>
 					<p className='gridContainer__advancedInfo__element'>
 						Top Level Domain:
 						<span className='gridContainer__advancedInfo__span'>
