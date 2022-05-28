@@ -13,19 +13,21 @@ const Home = ({
 	loading,
 	setFilterWord,
 	filterWord,
+	input,
+	setInput,
 }) => {
 	return (
 		<section className='home'>
 			<Header darkTheme={darkTheme} SetDarkTheme={SetDarkTheme} />
 			<section className='home__searchFilter'>
-				<Search />
+				<Search input={input} setInput={setInput} />
 				<Filter filterWord={filterWord} setFilterWord={setFilterWord} />
 			</section>
 
 			{loading ? (
 				<Loading />
 			) : (
-				<Countries data={data} filterWord={filterWord} />
+				<Countries data={data} filterWord={filterWord} input={input} />
 			)}
 		</section>
 	)

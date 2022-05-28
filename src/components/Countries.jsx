@@ -1,23 +1,35 @@
 import React from 'react'
 import Country from './Country'
 
-const Countries = ({ data, filterWord }) => {
+const Countries = ({ data, filterWord, input }) => {
+	console.log(data)
 	return (
 		<section className='countries'>
-			{filterWord.length === 0
-				? data.map(country => {
-						return (
-							<Country
-								key={country?.latlng}
-								img={country?.flags?.svg}
-								capital={country?.capital}
-								country={country?.name?.common}
-								region={country?.region}
-								population={country?.population}
-							/>
+			{input.length > 0
+				? data
+						.filter(country =>
+							filterWord.length === 0 || filterWord === 'All'
+								? country.name.common
+										.toLowerCase()
+										.includes(input.toLowerCase())
+								: country.name.common
+										.toLowerCase()
+										.includes(input.toLowerCase()) &&
+								  country.region === filterWord
 						)
-				  })
-				: filterWord === 'All'
+						.map(country => {
+							return (
+								<Country
+									key={country?.latlng}
+									img={country?.flags?.svg}
+									capital={country?.capital}
+									country={country?.name?.common}
+									region={country?.region}
+									population={country?.population}
+								/>
+							)
+						})
+				: filterWord.length === 0 || filterWord === 'All'
 				? data.map(country => {
 						return (
 							<Country

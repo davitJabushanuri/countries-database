@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Card = ({ img, country, population, region, capital }) => {
-	function numberWithCommas(x) {
+	const numberWithCommas = x => {
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 	}
 

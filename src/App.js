@@ -9,6 +9,7 @@ function App() {
 	const [data, setData] = useState([])
 	const [loading, setLoading] = useState(false)
 	const [filterWord, setFilterWord] = useState('')
+	const [input, setInput] = useState('')
 
 	const getData = async url => {
 		setLoading(true)
@@ -36,6 +37,8 @@ function App() {
 								loading={loading}
 								filterWord={filterWord}
 								setFilterWord={setFilterWord}
+								input={input}
+								setInput={setInput}
 							/>
 						}
 					/>
