@@ -11,6 +11,8 @@ function App() {
 	const [filterWord, setFilterWord] = useState('')
 	const [input, setInput] = useState('')
 
+	console.log(data)
+
 	const getData = async url => {
 		setLoading(true)
 		const data = await fetch(url)
@@ -42,7 +44,12 @@ function App() {
 							/>
 						}
 					/>
-					<Route path='/details' element={<Details />} />
+					<Route
+						path='/details'
+						element={
+							<Details darkTheme={darkTheme} SetDarkTheme={SetDarkTheme} />
+						}
+					/>
 				</Routes>
 			</div>
 		</main>

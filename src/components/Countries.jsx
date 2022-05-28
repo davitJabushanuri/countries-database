@@ -55,7 +55,7 @@ const Countries = ({ data, filterWord, input }) => {
 								topLevelDomain={country?.tld}
 								currencies={country?.currencies}
 								languages={country?.languages}
-								borderCountries={country?.altSpellings}
+								borderCountries={country?.borders}
 							/>
 						)
 				  })
@@ -75,7 +75,7 @@ const Countries = ({ data, filterWord, input }) => {
 									topLevelDomain={country?.tld}
 									currencies={country?.currencies}
 									languages={country?.languages}
-									borderCountries={country?.altSpellings}
+									borderCountries={country?.borders}
 								/>
 							)
 						})}

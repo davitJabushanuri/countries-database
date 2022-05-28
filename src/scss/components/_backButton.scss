@@ -1,4 +1,5 @@
 .backButton {
+	margin: 2rem 1rem;
 	&__link {
 		display: flex;
 		align-items: center;
@@ -13,5 +14,12 @@
 		background-color: $clr-background-light;
 		color: $clr-light-text;
 		font-weight: $fw-light;
+	}
+}
+
+#dark .backButton {
+	&__link {
+		background-color: $clr-dark-elements;
+		color: $clr-dark-text;
 	}
 }

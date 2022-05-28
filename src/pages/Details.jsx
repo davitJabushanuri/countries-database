@@ -1,8 +1,10 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
 import BackButton from '../components/BackButton'
+import CountryDetails from '../components/CountryDetails'
+import Header from '../components/Header'
 
-const Details = () => {
+const Details = ({ darkTheme, SetDarkTheme }) => {
 	const location = useLocation()
 	const {
 		img,
@@ -19,7 +21,21 @@ const Details = () => {
 	} = location.state
 	return (
 		<section className='details'>
+			<Header darkTheme={darkTheme} SetDarkTheme={SetDarkTheme} />
 			<BackButton />
+			<CountryDetails
+				img={img}
+				country={country}
+				nativeName={nativeName}
+				population={population}
+				region={region}
+				subRegion={subRegion}
+				capital={capital}
+				topLevelDomain={topLevelDomain}
+				currencies={currencies}
+				languages={languages}
+				borderCountries={borderCountries}
+			/>
 		</section>
 	)
 }
