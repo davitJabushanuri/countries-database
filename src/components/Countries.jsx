@@ -2,7 +2,6 @@ import React from 'react'
 import Country from './Country'
 
 const Countries = ({ data, filterWord, input }) => {
-	console.log(data)
 	return (
 		<section className='countries'>
 			{input.length > 0
@@ -26,6 +25,18 @@ const Countries = ({ data, filterWord, input }) => {
 									country={country?.name?.common}
 									region={country?.region}
 									population={country?.population}
+									nativeName={country?.name.nativeName}
+									subRegion={country?.subregion}
+									topLevelDomain={country?.tld}
+									currencies={country?.currencies}
+									languages={country?.languages}
+									borderCountries={country?.borders}
+									// nativeName,
+									// subRegion,
+									// topLevelDomain,
+									// currencies,
+									// languages,
+									// borderCountries,
 								/>
 							)
 						})
@@ -39,6 +50,12 @@ const Countries = ({ data, filterWord, input }) => {
 								country={country?.name?.common}
 								region={country?.region}
 								population={country?.population}
+								nativeName={country?.name.nativeName}
+								subRegion={country?.subregion}
+								topLevelDomain={country?.tld}
+								currencies={country?.currencies}
+								languages={country?.languages}
+								borderCountries={country?.altSpellings}
 							/>
 						)
 				  })
@@ -53,6 +70,12 @@ const Countries = ({ data, filterWord, input }) => {
 									country={country?.name?.common}
 									region={country?.region}
 									population={country?.population}
+									nativeName={country?.name.nativeName}
+									subRegion={country?.subregion}
+									topLevelDomain={country?.tld}
+									currencies={country?.currencies}
+									languages={country?.languages}
+									borderCountries={country?.altSpellings}
 								/>
 							)
 						})}

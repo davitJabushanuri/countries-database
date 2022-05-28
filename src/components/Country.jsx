@@ -1,12 +1,41 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Card = ({ img, country, population, region, capital }) => {
+const Card = ({
+	img,
+	country,
+	population,
+	region,
+	capital,
+	nativeName,
+	subRegion,
+	topLevelDomain,
+	currencies,
+	languages,
+	borderCountries,
+}) => {
 	const numberWithCommas = x => {
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 	}
 
 	return (
-		<div className='country'>
+		<Link
+			to='/details'
+			state={{
+				img,
+				country,
+				nativeName,
+				population,
+				region,
+				subRegion,
+				capital,
+				topLevelDomain,
+				currencies,
+				languages,
+				borderCountries,
+			}}
+			className='country'
+		>
 			<div className='country__imgContainer'>
 				<img src={img} alt='' className='country__imgContainer__img' />
 			</div>
@@ -28,7 +57,7 @@ const Card = ({ img, country, population, region, capital }) => {
 					<span className='country__details__population__span'>{capital}</span>
 				</p>
 			</div>
-		</div>
+		</Link>
 	)
 }
 

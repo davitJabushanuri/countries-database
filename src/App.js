@@ -42,7 +42,7 @@ function App() {
 							/>
 						}
 					/>
-					<Route path='details' element={<Details />} />
+					<Route path='/details' element={<Details />} />
 				</Routes>
 			</div>
 		</main>
