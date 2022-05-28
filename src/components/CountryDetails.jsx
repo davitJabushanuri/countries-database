@@ -17,6 +17,10 @@ const CountryDetails = ({
 	const currenciesArr = Object.values(currencies)
 	console.log(borderCountries)
 
+	const numberWithCommas = x => {
+		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+	}
+
 	return (
 		<section className='countryDetails'>
 			<div className='countryDetails__imgContainer'>
@@ -33,7 +37,9 @@ const CountryDetails = ({
 					</p>
 					<p className='gridContainer__basicInfo__element'>
 						Population:
-						<span className='gridContainer__basicInfo__span'>{population}</span>
+						<span className='gridContainer__basicInfo__span'>
+							{numberWithCommas(population)}
+						</span>
 					</p>
 					<p className='gridContainer__basicInfo__element'>
 						Region:
@@ -64,9 +70,9 @@ const CountryDetails = ({
 					</p>
 					<p className='gridContainer__advancedInfo__element'>
 						Languages:
-						<span className='gridContainer__advancedInfo__span'>
+						<span className='gridContainer__advancedInfo__span flexLanguages'>
 							{languagesArr.map(x => {
-								return <span>{x}</span>
+								return <span>{x}, </span>
 							})}
 						</span>
 					</p>
