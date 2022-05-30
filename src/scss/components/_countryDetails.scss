@@ -1,5 +1,11 @@
 .countryDetails {
-	margin: 1rem;
+	margin: 0 clamp(1rem, 1rem + 2vw, 5rem);
+
+	@media (min-width: 1024px) {
+		display: flex;
+		align-items: center;
+		gap: clamp(2rem, 2rem + 4vw, 9rem);
+	}
 
 	&__imgContainer {
 		margin: 2rem 0;
@@ -14,46 +20,67 @@
 		}
 	}
 
-	.gridContainer {
+	&__gridContainer {
 		display: flex;
 		flex-direction: column;
 		gap: 1.4rem;
 
 		&__countryName {
-			font-size: 22px;
+			grid-area: countryName;
+			font-size: clamp(22px, 20px + 1vw, 32px);
 			font-weight: $fw-bold;
 		}
 
-		&__basicInfo {
+		&__info {
 			display: flex;
 			flex-direction: column;
-			gap: 0.6rem;
-			font-weight: $fw-medium;
-			font-size: 14px;
+			gap: 1rem;
 
-			&__span {
-				font-weight: $fw-light;
-				margin-left: 0.4rem;
+			@media (min-width: 1024px) {
+				flex-direction: row;
+				gap: clamp(1rem, 1rem + 1vw, 4rem);
 			}
-		}
 
-		&__advancedInfo {
-			display: flex;
-			flex-direction: column;
-			gap: 0.6rem;
-			font-weight: $fw-medium;
-			font-size: 14px;
+			&__basicInfo {
+				grid-area: basicInfo;
+				display: flex;
+				flex-direction: column;
+				gap: 0.6rem;
+				font-weight: $fw-medium;
+				font-size: 14px;
 
-			&__span {
-				font-weight: $fw-light;
-				margin-left: 0.4rem;
+				&__span {
+					font-weight: $fw-light;
+					margin-left: 0.4rem;
+				}
+			}
+
+			&__advancedInfo {
+				grid-area: advancedInfo;
+
+				display: flex;
+				flex-direction: column;
+				gap: 0.6rem;
+				font-weight: $fw-medium;
+				font-size: 14px;
+
+				&__span {
+					font-weight: $fw-light;
+					margin-left: 0.4rem;
+				}
 			}
 		}
 
 		&__border {
+			grid-area: borderCountries;
 			display: flex;
 			flex-direction: column;
 			gap: 1rem;
+
+			@media (min-width: 1024px) {
+				flex-direction: row;
+				margin-top: 2rem;
+			}
 
 			&__countries {
 				display: flex;
@@ -74,7 +101,7 @@
 
 #dark .countryDetails {
 	color: $clr-dark-text;
-	.gridContainer {
+	&__gridContainer {
 		&__border {
 			&__countries {
 				span {

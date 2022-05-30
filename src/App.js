@@ -11,8 +11,6 @@ function App() {
 	const [filterWord, setFilterWord] = useState('')
 	const [input, setInput] = useState('')
 
-	console.log(data)
-
 	const getData = async url => {
 		setLoading(true)
 		const data = await fetch(url)

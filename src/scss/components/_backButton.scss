@@ -1,5 +1,6 @@
 .backButton {
-	margin: 2rem 1rem;
+	margin: clamp(2rem, 2rem + 2vw, 6rem) clamp(1rem, 1rem + 2vw, 5rem);
+
 	&__link {
 		display: flex;
 		align-items: center;
