@@ -93,10 +93,11 @@ const CountryDetails = ({
 						Border Countries:
 					</h2>
 					<div className='countryDetails__gridContainer__border__countries'>
-						{borderCountries &&
-							borderCountries.map((country, i) => {
-								return <span key={i}>{country}</span>
-							})}
+						{borderCountries
+							? borderCountries.map((country, i) => {
+									return <span key={i}>{country}</span>
+							  })
+							: 'None'}
 					</div>
 				</div>
 			</div>
