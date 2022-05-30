@@ -9,14 +9,14 @@ const CountryDetails = ({
 	subRegion,
 	capital,
 	topLevelDomain,
-	currencies,
+	currencies = 'null',
 	languages,
 	borderCountries,
 }) => {
 	const languagesArr = Object.values(languages)
 	const currenciesArr = Object.values(currencies)
-	console.log(borderCountries)
-
+	const nativeNameArr = Object.values(nativeName)
+	console.log(nativeNameArr[0].common)
 	const numberWithCommas = x => {
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 	}
@@ -32,7 +32,7 @@ const CountryDetails = ({
 					<p className='gridContainer__basicInfo__element'>
 						Native Name:
 						<span className='gridContainer__basicInfo__span'>
-							{/* {nativeName?.spa?.common} */}
+							{nativeNameArr[nativeNameArr.length - 1]?.common}
 						</span>
 					</p>
 					<p className='gridContainer__basicInfo__element'>
@@ -71,9 +71,10 @@ const CountryDetails = ({
 					<p className='gridContainer__advancedInfo__element'>
 						Languages:
 						<span className='gridContainer__advancedInfo__span flexLanguages'>
-							{languagesArr.map(x => {
-								return <span>{x}</span>
-							})}
+							{languagesArr &&
+								languagesArr.map((x, i) => {
+									return <span key={i}>{x}</span>
+								})}
 						</span>
 					</p>
 				</div>
@@ -81,9 +82,10 @@ const CountryDetails = ({
 				<div className='gridContainer__border'>
 					<h2 className='gridContainer__border__header'>Border Countries:</h2>
 					<div className='gridContainer__border__countries'>
-						{borderCountries.map(country => {
-							return <span>{country}</span>
-						})}
+						{borderCountries &&
+							borderCountries.map((country, i) => {
+								return <span key={i}>{country}</span>
+							})}
 					</div>
 				</div>
 			</div>
