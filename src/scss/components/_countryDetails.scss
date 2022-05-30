@@ -85,3 +85,7 @@
 		}
 	}
 }
+
+.flexLanguages > *:not(:last-child)::after {
+	content: ', ';
+}

@@ -72,7 +72,7 @@ const CountryDetails = ({
 						Languages:
 						<span className='gridContainer__advancedInfo__span flexLanguages'>
 							{languagesArr.map(x => {
-								return <span>{x}, </span>
+								return <span>{x}</span>
 							})}
 						</span>
 					</p>
