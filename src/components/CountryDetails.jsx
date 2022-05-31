@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const CountryDetails = ({
 	img,
-	country,
+	countryName,
 	nativeName,
 	population,
 	region,
@@ -12,12 +13,33 @@ const CountryDetails = ({
 	currencies = 'null',
 	languages,
 	borderCountries,
+	data,
 }) => {
 	const languagesArr = Object.values(languages)
 	const currenciesArr = Object.values(currencies)
 	const nativeNameArr = Object.values(nativeName)
+
+	const bordersArr = []
+
+	if (borderCountries)
+		for (let i = 0; i < borderCountries.length; i++) {
+			const country = data.find(x => x.cca3 === borderCountries[i])
+			bordersArr.push(country.name.common)
+		}
+
 	const numberWithCommas = x => {
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+	}
+
+	const [borderCountry, setBorderCountry] = useState({})
+	let countryData = {
+		country: borderCountry,
+		data: data,
+	}
+
+	const redirectToBorderCountry = e => {
+		const name = e.target.textContent
+		setBorderCountry(data.find(country => country.name.common === name))
 	}
 
 	return (
@@ -27,7 +49,7 @@ const CountryDetails = ({
 			</div>
 			<div className='countryDetails__gridContainer'>
 				<h1 className='countryDetails__gridContainer__countryName'>
-					{country}
+					{countryName}
 				</h1>
 				<div className='countryDetails__gridContainer__info'>
 					<div className='countryDetails__gridContainer__info__basicInfo'>
@@ -94,11 +116,25 @@ const CountryDetails = ({
 					</h2>
 					<div className='countryDetails__gridContainer__border__countries'>
 						{borderCountries
-							? borderCountries.map((country, i) => {
-									return <span key={i}>{country}</span>
+							? bordersArr.map((country, i) => {
+									return (
+										<button
+											className='countryDetails__gridContainer__border__countries__borderCountry'
+											onClick={e => {
+												redirectToBorderCountry(e)
+											}}
+											key={i}
+										>
+											{country}
+										</button>
+									)
 							  })
 							: 'None'}
 					</div>
+
+					<Link to='/details' state={countryData}>
+						link
+					</Link>
 				</div>
 			</div>
 		</section>

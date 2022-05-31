@@ -6,35 +6,26 @@ import Header from '../components/Header'
 
 const Details = ({ darkTheme, SetDarkTheme }) => {
 	const location = useLocation()
-	const {
-		img,
-		country,
-		nativeName,
-		population,
-		region,
-		subRegion,
-		capital,
-		topLevelDomain,
-		currencies,
-		languages,
-		borderCountries,
-	} = location.state
+	const { country, data } = location.state
+	console.log(location.state)
+
 	return (
 		<section className='details'>
 			<Header darkTheme={darkTheme} SetDarkTheme={SetDarkTheme} />
 			<BackButton />
 			<CountryDetails
-				img={img}
-				country={country}
-				nativeName={nativeName}
-				population={population}
-				region={region}
-				subRegion={subRegion}
-				capital={capital}
-				topLevelDomain={topLevelDomain}
-				currencies={currencies}
-				languages={languages}
-				borderCountries={borderCountries}
+				img={country?.flags?.svg}
+				countryName={country?.name?.common}
+				nativeName={country?.name?.nativeName}
+				population={country?.population}
+				region={country?.region}
+				subRegion={country?.subregion}
+				capital={country?.capital}
+				topLevelDomain={country?.tld}
+				currencies={country?.currencies}
+				languages={country?.languages}
+				borderCountries={country?.borders}
+				data={data}
 			/>
 		</section>
 	)

@@ -22,21 +22,11 @@ const Countries = ({ data, filterWord, input }) => {
 									key={country?.latlng}
 									img={country?.flags?.svg}
 									capital={country?.capital}
-									country={country?.name?.common}
+									countryName={country?.name?.common}
 									region={country?.region}
 									population={country?.population}
-									nativeName={country?.name.nativeName}
-									subRegion={country?.subregion}
-									topLevelDomain={country?.tld}
-									currencies={country?.currencies}
-									languages={country?.languages}
-									borderCountries={country?.borders}
-									// nativeName,
-									// subRegion,
-									// topLevelDomain,
-									// currencies,
-									// languages,
-									// borderCountries,
+									country={country}
+									data={data}
 								/>
 							)
 						})
@@ -47,15 +37,11 @@ const Countries = ({ data, filterWord, input }) => {
 								key={country?.latlng}
 								img={country?.flags?.svg}
 								capital={country?.capital}
-								country={country?.name?.common}
+								countryName={country?.name?.common}
 								region={country?.region}
 								population={country?.population}
-								nativeName={country?.name.nativeName}
-								subRegion={country?.subregion}
-								topLevelDomain={country?.tld}
-								currencies={country?.currencies}
-								languages={country?.languages}
-								borderCountries={country?.borders}
+								country={country}
+								data={data}
 							/>
 						)
 				  })
@@ -67,15 +53,11 @@ const Countries = ({ data, filterWord, input }) => {
 									key={country?.latlng}
 									img={country?.flags?.svg}
 									capital={country?.capital}
-									country={country?.name?.common}
+									countryName={country?.name?.common}
 									region={country?.region}
 									population={country?.population}
-									nativeName={country?.name.nativeName}
-									subRegion={country?.subregion}
-									topLevelDomain={country?.tld}
-									currencies={country?.currencies}
-									languages={country?.languages}
-									borderCountries={country?.borders}
+									country={country}
+									data={data}
 								/>
 							)
 						})}
