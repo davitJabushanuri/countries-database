@@ -1,18 +1,25 @@
 # Advice generator
 
-This is a solution to the [Advice generator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db).
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca).
 
 ## :beginner: Overview
 
-this app generates new advice on every button click.
-
-[View demo](https://davitjabushanuri.github.io/advice-generator/)
+[View demo](https://davitjabushanuri.github.io/countries-database/)
 
 ## :camera:
 
 ![](./templates/template.png)
 
 ## :zap: Usage
+
+Users should be able to:
+
+- See all countries from the [API](https://restcountries.com/) on the homepage
+- Search for a country using an input field
+- Filter countries by region
+- Click on a country to see more detailed information on a separate page
+- Click through to the border countries on the detail page
+- Toggle the color scheme between light and dark mode
 
 ### :notebook: Pre-Requisites
 
@@ -27,8 +34,8 @@ To get a local copy up and running follow these simple example steps.
 After you've made sure to have all the tools installed, you should be able to just run a few commands to get set up
 
 ```
-git clone git@github.com:davitJabushanuri/advice-generator.git
-cd advice-generator
+git clone https://github.com/davitJabushanuri/countries-database.git
+cd countries-database
 npm install
 npm start
 ```
@@ -36,6 +43,8 @@ npm start
 ### :hammer: Built With
 
 - [React](reactjs.org)
+- [React Router](https://reactrouter.com/)
+- [restcountries.com](https://restcountries.com/)
 - [Sass](https://sass-lang.com/)
 - [Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
@@ -43,18 +52,18 @@ npm start
 
 ### :house: Development
 
-- Add animations
-- Add light theme
+- Add functionality to search countries by currency, language, capital, region and sub region.
+- Add a map for each country
 
 ### 🤝 Contribution
 
 Your contributions are always welcome and appreciated. Following are the things you can do to contribute to this project.
 
 - **Report a bug**
-  If you think you have encountered a bug, feel free to report it [here](https://github.com/davitJabushanuri/advice-generator/issues).
+  If you think you have encountered a bug, feel free to report it [here](https://github.com/davitJabushanuri/countries-database/issues).
   <br/>
 - **Request a feature**
-  If you have a suggestion that would make this better, You can request for a feature [here](https://github.com/davitJabushanuri/advice-generator/issues) with the tag "enhancement".
+  If you have a suggestion that would make this better, You can request for a feature [here](https://github.com/davitJabushanuri/countries-database/issues) with the tag "enhancement".
   <br/>
 
 - **Create a pull request**
