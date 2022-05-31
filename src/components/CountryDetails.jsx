@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const CountryDetails = ({
 	img,
@@ -15,6 +15,7 @@ const CountryDetails = ({
 	borderCountries,
 	data,
 }) => {
+	const navigate = useNavigate()
 	const languagesArr = Object.values(languages)
 	const currenciesArr = Object.values(currencies)
 	const nativeNameArr = Object.values(nativeName)
@@ -31,15 +32,11 @@ const CountryDetails = ({
 		return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 	}
 
-	const [borderCountry, setBorderCountry] = useState({})
-	let countryData = {
-		country: borderCountry,
-		data: data,
-	}
-
 	const redirectToBorderCountry = e => {
 		const name = e.target.textContent
-		setBorderCountry(data.find(country => country.name.common === name))
+		const borderCountry = data.find(country => country.name.common === name)
+
+		navigate('/details', { state: { country: borderCountry, data: data } })
 	}
 
 	return (
@@ -131,10 +128,6 @@ const CountryDetails = ({
 							  })
 							: 'None'}
 					</div>
-
-					<Link to='/details' state={countryData}>
-						link
-					</Link>
 				</div>
 			</div>
 		</section>
