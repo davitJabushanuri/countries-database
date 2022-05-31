@@ -7,7 +7,6 @@ import Header from '../components/Header'
 const Details = ({ darkTheme, SetDarkTheme }) => {
 	const location = useLocation()
 	const { country, data } = location.state
-	console.log(location)
 
 	return (
 		<section className='details'>

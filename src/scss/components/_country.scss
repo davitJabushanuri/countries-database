@@ -23,7 +23,7 @@
 	&__heading {
 		margin-left: 1.2rem;
 		margin-top: 0.6rem;
-		font-size: 18px;
+		font-size: clamp(18px, 16px + 1vw, 26px);
 		font-weight: $fw-bold;
 	}
 
@@ -34,7 +34,7 @@
 		flex-direction: column;
 		gap: 0.6rem;
 		font-weight: $fw-medium;
-		font-size: 14px;
+		font-size: clamp(14px, 10px + 1vw, 20px);
 
 		&__population {
 			&__span {
