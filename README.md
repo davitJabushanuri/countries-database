@@ -50,6 +50,21 @@ npm start
 
 ## :book: What I learned
 
+How to pass and retrieve data in React Router
+
+- Pass data with Link or useNavigate
+
+  ```
+  <Link to='/details' state={countryData}>
+  navigate('/details', { state: countryData })
+  ```
+
+- retrieve data with useLocation
+  ```
+  const location = useLocation()
+  const { countryData } = location.state
+  ```
+
 ### :house: Development
 
 - Add functionality to search countries by currency, language, capital, region and sub region.
